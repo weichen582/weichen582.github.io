@@ -62,6 +62,42 @@
         </table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <tr onmouseout="crest_stop()" onmouseover="crest_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='crest_image'><img style="width:110%;max-width:110%" src='images_new/crest.png'></div>
+                <img style="width:110%;max-width:110%" src='images_new/crest.png'>
+              </div>
+              <script type="text/javascript">
+                function co2_start() {
+                  document.getElementById('crest_image').style.opacity = "1";
+                }
+
+                function co2_stop() {
+                  document.getElementById('crest_image').style.opacity = "0";
+                }
+                co2_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/pdf/2102.09559.pdf">
+                <papertitle> CReST: A Class-Rebalancing Self-Training Framework for Imbalanced Semi-Supervised Learning </papertitle>
+              </a>
+              <br>
+              <strong>Chen Wei</strong>,
+              <a href="https://sites.google.com/site/kihyuksml/">Kihyuk Sohn</a>,
+              <a href="https://scholar.google.com/citations?user=Vu3vH2sAAAAJ&hl=en">Clayton Mellina</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+              <a href="http://users.umiacs.umd.edu/~fyang/">Fan Yang</a>
+              <br>
+              <em>arXiv preprint </em>, 2021
+              <br>
+              <a href="https://arxiv.org/pdf/2102.09559.pdf">arXiv</a> 
+              <br>
+              <p></p>
+            </td>
+          </tr>
+
           <tr onmouseout="co2_stop()" onmouseover="co2_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
