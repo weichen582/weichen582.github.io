@@ -12,10 +12,10 @@
   </script>
 
   <title>Chen Wei</title>
-  
+
   <meta name="author" content="Jon Barron">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images_new/JHU_icon.jpg">
 </head>
@@ -37,10 +37,10 @@
                <a href="https://cs.jhu.edu/~ayuille/">Alan L. Yuille</a>.
               </p>
               <p>
-                Before that, I received my B.S. in Computer Science from Peking University. I have also spent great time at Google, Noah's Ark Lab, and <a href="http://www.icst.pku.edu.cn/struct/">STRUCT</a> Lab.
+                Before that, I received my B.S. in Computer Science from Peking University. I have also spent great time at FAIR, Google, and Noah's Ark Lab.
               </p>
               <p>
-                I'm exploring various learning-based computer vision problems. Currently, I am interested in self-supervised visual repsentation learning.
+                My main research focus is visual self-supervised learning.
               </p>
               <p style="text-align:center">
                 <a href="mailto:weichen3012@gmail.com">weichen3012 [at] gmail [dot] com</a> &nbsp/&nbsp
@@ -60,23 +60,102 @@
             </td>
           </tr>
         </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-          <tr onmouseout="crest_stop()" onmouseover="crest_start()">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr onmouseout="maskfeat_stop()" onmouseover="maskfeat_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
+              <br></br>
               <div class="one">
-                <div class="two" id='crest_image'><img style="width:110%;max-width:110%" src='images_new/crest.png'></div>
-                <img style="width:110%;max-width:110%" src='images_new/crest.png'>
+                <div class="two" id='maskfeat_image'><img style="width:100%" src='images_new/maskfeat_after.png'></div>
+                <img style="width:100%" src='images_new/maskfeat_before.png'>
               </div>
               <script type="text/javascript">
-                function co2_start() {
+                function maskfeat_start() {
+                  document.getElementById('maskfeat_image').style.opacity = "1";
+                }
+
+                function maskfeat_stop() {
+                  document.getElementById('maskfeat_image').style.opacity = "0";
+                }
+                maskfeat_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/pdf/2112.09133.pdf">
+                <papertitle> Masked Feature Prediction for Self-Supervised Visual Pre-Training </papertitle>
+              </a>
+              <br>
+              <strong>Chen Wei</strong>,
+              <a href="https://haoqifan.github.io/">Haoqi Fan</a>,
+              <a href="https://vcl.ucsd.edu/~sxie/">Saining Xie</a>,
+              <a href="https://chaoyuan.org/">Chao-Yuan Wu</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+              <a href="https://feichtenhofer.github.io/">Christoph Feichtenhofer</a>
+              <br>
+              <em>arXiv </em>, 2021
+              <br>
+              <a href="https://arxiv.org/pdf/2112.09133.pdf">arXiv</a>  /
+              code will be open sourced <a href="https://github.com/facebookresearch/SlowFast">here</a>
+              <br>
+            </td>
+          </tr>
+
+          <tr onmouseout="ibot_stop()" onmouseover="ibot_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='ibot_image'><img style="width:100%;max-width:100%" src='images_new/ibot_after.png'></div>
+                <img style="width:100%;max-width:100%" src='images_new/ibot_before.png'>
+              </div>
+              <script type="text/javascript">
+                function ibot_start() {
+                  document.getElementById('ibot_image').style.opacity = "1";
+                }
+
+                function ibot_stop() {
+                  document.getElementById('ibot_image').style.opacity = "0";
+                }
+                ibot_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/pdf/2111.07832.pdf">
+                <papertitle> iBOT: Image BERT Pre-Training with Online Tokenizer </papertitle>
+              </a>
+              <br>
+              <a href="https://shallowtoil.github.io/">Jinghao Zhou</a>,
+              <strong>Chen Wei</strong>,
+              <a href="https://csrhddlam.github.io/">Huiyu Wang</a>,
+              <a href="https://shenwei1231.github.io/">Wei Shen</a>,
+              <a href="https://cihangxie.github.io/">Cihang Xie</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+              <a href="http://www.taokong.org/">Tao Kong</a>
+              <br>
+              <em>arXiv </em>, 2021
+              <br>
+              <a href="https://arxiv.org/pdf/2111.07832.pdf">arXiv</a>  /
+              <a href="https://github.com/bytedance/ibot">code</a> /
+              <a href="https://medium.com/syncedreview/meet-ibot-a-masked-image-modelling-framework-that-enables-bert-like-pretraining-for-vision-da01002115e7">press</a>
+
+              <br>
+              <p></p>
+            </td>
+          </tr>
+
+          <tr onmouseout="crest_stop()" onmouseover="crest_start()">
+            <td style="padding:8px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='crest_image'><img style="width:110%" src='images_new/crest_after.png'></div>
+                <img style="width:110%" src='images_new/crest_before.png'>
+              </div>
+              <script type="text/javascript">
+                function crest_start() {
                   document.getElementById('crest_image').style.opacity = "1";
                 }
 
-                function co2_stop() {
+                function crest_stop() {
                   document.getElementById('crest_image').style.opacity = "0";
                 }
-                co2_stop()
+                crest_stop()
               </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
@@ -125,7 +204,7 @@
               <br>
               <strong>Chen Wei</strong>,
               <a href="https://csrhddlam.github.io/">Huiyu Wang</a>,
-              <a href="http://wei-shen.weebly.com/">Wei Shen</a>,
+              <a href="https://shenwei1231.github.io/">Wei Shen</a>,
               <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>
               <br>
               <em>ICLR </em>, 2021
@@ -142,7 +221,7 @@
             <td style="padding:20px;width:25%;vertical-align:middle"></td>
             <td style="padding:20px;width:75%;vertical-align:middle"></td>
           </tr>
-          
+
           <tr onmouseout="puzzle_stop()" onmouseover="puzzle_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -160,7 +239,7 @@
                 puzzle_stop()
               </script>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:30px;width:75%;vertical-align:middle">
               <a href="https://arxiv.org/abs/1812.00329">
                 <papertitle> Iterative Reorganization with Weak Spatial Constraints: </br> Solving Arbitrary Jigsaw Puzzles for Unsupervised Representation Learning</papertitle>
               </a>
@@ -221,7 +300,7 @@
           </tr>
 
           <tr onmouseout="glad_stop()" onmouseover="glad_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">              
+            <td style="padding:20px;width:25%;vertical-align:middle">
               <br></br>
               <div class="one">
                 <div class="two" id='glad_image'><img src='images_new/glad_after.png'></div>
@@ -264,22 +343,19 @@
                   <heading>Experience</heading>
                   <!-- <br /> -->
               <ul>
-                <li>Research Intern, Facebook AI Research (FAIR), May 2021 - Present</li>
-              </ul>  
+                <li>Research Intern, Facebook AI Research, Summer 2021</li>
+              </ul>
               <ul>
-                <li>Research Intern, Google Cloud AI, Jun. 2020 - Nov. 2020</li>
-              </ul>              
-              <ul>
-                <li>Research Assistant, Johns Hopkins University, Sep. 2019 - Present</li>
+                <li>Research Intern, Google Cloud AI, Summer 2020</li>
               </ul>
               <ul>
                 <li>Research Intern, Johns Hopkins University, Summer 2018</li>
               </ul>
               <ul>
-                <li>Research Assistant, Peking University, May 2017 - Feb. 2019</li>
+                <li>Engineering Practium Intern, Google, Summer 2017</li>
               </ul>
               <ul>
-                <li>Engineering Practium Intern, Google, Summer 2017</li>
+                <li>Research Intern, <a href="http://www.icst.pku.edu.cn/struct/">STRUCT</a> Lab, Peking University, 2017 - 2019</li>
               </ul>
             </td>
           </tr>
@@ -290,7 +366,7 @@
             <td style="padding:0px">
               <br>
               <p style="text-align:right;font-size:small;">
-                  Last update: Jan. 2021 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
+                  Last update: Dec. 2021 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
               </p>
             </td>
           </tr>
