@@ -7,13 +7,13 @@ Official PyTorch implementation of the paper:
 > <br>Meta AI, Johns Hopkins University, UC Santa Cruz<br>
 
 <p align="center">
-  <img src="http://weichen582.github.io/files/diffmae_teaser.png" width="500px">
+  <img src="http://weichen582.github.io/files/diffmae_teaser.png" width="750px">
 </p>
 
 ## Generation and visualization
 
 <p align="center">
-  <img src="http://weichen582.github.io/files/diffmae_vis.png" width="500px">
+  <img src="http://weichen582.github.io/files/diffmae_vis.png" width="775px">
 </p>
 
 To sample from our pre-trained DiffMAE models:
