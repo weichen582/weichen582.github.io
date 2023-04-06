@@ -19,8 +19,10 @@
   <link rel="stylesheet" href="./diffmae/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.20.0/gradio.js" ></script>
+  <script defer src="./diffmae/js/fontawesome.all.min.js"></script>
+  <script src="./diffmae/js/bulma-carousel.min.js"></script>
+  <script src="./diffmae/js/bulma-slider.min.js"></script>
+  <script src="./diffmae/js/index.js"></script>
   <style>
   .src-image{
     margin-bottom: -5%;
@@ -116,25 +118,32 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./diffmae/images/teaser.gif">
-      <h2 class="subtitle has-text-centered">
-        <!-- <span class="diffmae">DiffMAE</span> turns selfie videos from your phone into free-viewpoint portraits. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column" style="padding: 1px">
+          <img src="./diffmae/images/teaser-1.gif">
+          
+          <table width="100%">
+            <tr>
+              <th width="33.3%">ground-truth</th>
+              <th width="33.3%"><span class="diffmae">DiffMAE</span></th>
+              <th width="33.3">MAE</th>
+            </tr>
+          </table>
+        </div>
+        <div class="column" style="padding: 1px">
+          <img src="./diffmae/images/teaser-2.gif">
 
           <table width="100%">
             <tr>
-              <th width="16.6%">ground-truth</th>
-              <th width="16.6%"><span class="diffmae">DiffMAE</span></th>
-              <th width="16.6%">MAE</th>
-              <th width="16.6%">ground-truth</th>
-              <th width="16.6%"><span class="diffmae">DiffMAE</span></th>
-              <th width="16.6%">MAE</th>
+              <th width="33.3%">ground-truth</th>
+              <th width="33.3%"><span class="diffmae">DiffMAE</span></th>
+              <th width="33.3">MAE</th>
             </tr>
           </table>
-
-          <h2 class="subtitle has-text-centered">
-            <span class="diffmae">DiffMAE</span> gradually adds visual details by diffusion for masked autoencoding.
-          </h2>
-
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="diffmae">DiffMAE</span> gradually adds visual details by diffusion for masked autoencoding.
       </h2>
     </div>
   </div>
@@ -192,58 +201,129 @@
         <div class="content has-text-justified has-text-centered">
           <p>
             The images are from ImageNet-1K validation set.
-            Hover to view the inpainting results.
+          </p>
+          <p>
+            Use the slider to see generations from different inference steps.
           </p>
         </div>
-        <div class="columns">
-          <div class="column overlay-image">
-            <img src="./diffmae/images/random-0-1.png" class="src-image">
-            <img src="./diffmae/images/random-0-2.png" class="dst-image">
+
+        <!-- Interpolating. -->
+        <div class="columns is-vcentered is-centered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./diffmae/interpolation/input.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>masked input</p>
           </div>
 
-          <div class="column overlay-image">
-            <img src="./diffmae/images/random-1-1.png" class="src-image">
-            <img src="./diffmae/images/random-1-2.png" class="dst-image">
+          <div class="column is-3 is-centered">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="2" value="0" type="range">
+          </div>
+
+          <div class="column is-3 has-text-centered">
+            <img src="./diffmae/interpolation/gt.png"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">ground-truth</p>
+          </div>
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <div class="content has-text-justified has-text-centered">
+          <p>
+            Hover to view the masked inputs.
+          </p>
+        </div>
+
+        <div class="columns">
+          <div class="column overlay-image has-text-centered">
+            <img src="./diffmae/images/random-0-2.png" class="src-image">
+            <img src="./diffmae/images/random-0-1.png" class="dst-image">
+          </div>
+
+          <div class="column overlay-image has-text-centered">
+            <img src="./diffmae/images/random-1-2.png" class="src-image">
+            <img src="./diffmae/images/random-1-1.png" class="dst-image">
           </div>
         </div>
 
 
         <div class="columns">
-          <div class="column overlay-image">
-            <img src="./diffmae/images/random-2-1.png" class="src-image">
-            <img src="./diffmae/images/random-2-2.png" class="dst-image">
+          <div class="column overlay-image has-text-centered">
+            <img src="./diffmae/images/random-2-2.png" class="src-image">
+            <img src="./diffmae/images/random-2-1.png" class="dst-image">
+
+            <table width="100%">
+              <tr>
+                <td width="50%">ground-truth</th>
+                <td width="50%"><span class="diffmae">DiffMAE</span></th>
+              </tr>
+            </table>
           </div>
 
-          <div class="column overlay-image">
-            <img src="./diffmae/images/random-3-1.png" class="src-image">
-            <img src="./diffmae/images/random-3-2.png" class="dst-image">
+          <div class="column overlay-image has-text-centered">
+            <img src="./diffmae/images/random-3-2.png" class="src-image">
+            <img src="./diffmae/images/random-3-1.png" class="dst-image">
+
+            <table width="100%">
+              <tr>
+                <td width="50%">ground-truth</th>
+                <td width="50%"><span class="diffmae">DiffMAE</span></th>
+              </tr>
+            </table>
           </div>
         </div>
         <!--/ Random Masking. -->
 
         <!-- Center Masking. -->
         <h3 class="title is-4">Center Mask Inpainting</h3>
+        <div class="content has-text-justified has-text-centered">
+          <p>
+            The images are from ImageNet-1K validation set.
+            Hover to view the masked inputs.
+          </p>
+        </div>
         <div class="columns">
-          <div class="column overlay-image">
-            <img src="./diffmae/images/center-0-1.png" class="src-image" width="94%" height="94%" >
-            <img src="./diffmae/images/center-0-2.png" class="dst-image" width="94%" height="94%">
+          <div class="column overlay-image has-text-centered">
+            <img src="./diffmae/images/center-0-2.png" class="src-image" width="94%" height="94%" >
+            <img src="./diffmae/images/center-0-1.png" class="dst-image" width="94%" height="94%">
           </div>
 
-          <div class="column overlay-image">
-            <img src="./diffmae/images/center-1-1.png" class="src-image" width="94%" height="94%">
-            <img src="./diffmae/images/center-1-2.png" class="dst-image" width="94%" height="94%">
+          <div class="column overlay-image has-text-centered">
+            <img src="./diffmae/images/center-1-2.png" class="src-image" width="94%" height="94%">
+            <img src="./diffmae/images/center-1-1.png" class="dst-image" width="94%" height="94%">
           </div>
         </div>
 
         <div class="columns">
-          <div class="column overlay-image">
-            <img src="./diffmae/images/center-2-1.png" class="src-image" width="94%" height="94%">
-            <img src="./diffmae/images/center-2-2.png" class="dst-image" width="94%" height="94%">
+          <div class="column overlay-image has-text-centered">
+            <img src="./diffmae/images/center-2-2.png" class="src-image" width="94%" height="94%">
+            <img src="./diffmae/images/center-2-1.png" class="dst-image" width="94%" height="94%">
+
+            <table width="100%">
+              <tr>
+                <td width="50%">ground-truth</th>
+                <td width="50%"><span class="diffmae">DiffMAE</span></th>
+              </tr>
+            </table>
           </div>
 
-          <div class="column overlay-image">
-            <img src="./diffmae/images/center-3-1.png" class="src-image" width="94%" height="94%">
-            <img src="./diffmae/images/center-3-2.png" class="dst-image" width="94%" height="94%">
+          <div class="column overlay-image has-text-centered">
+            <img src="./diffmae/images/center-3-2.png" class="src-image" width="94%" height="94%">
+            <img src="./diffmae/images/center-3-1.png" class="dst-image" width="94%" height="94%">
+
+            <table width="100%">
+              <tr>
+                <td width="50%">ground-truth</th>
+                <td width="50%"><span class="diffmae">DiffMAE</span></th>
+              </tr>
+            </table>
           </div>
         </div>
         <!--/ Center Masking. -->
@@ -256,12 +336,28 @@
           </p>
         </div>
         <div class="columns">
-          <div class="column">
-            <img src="./diffmae/images/video-0.gif" width="94%" height="94%" >
+          <div class="column has-text-centered">
+            <img src="./diffmae/images/video-0.gif" width="95%" height="95%" >
+
+            <table width="100%">
+              <tr>
+                <td width="33.3%">ground-truth</td>
+                <td width="33.3%">inputs</td>
+                <td width="33.3"><span class="diffmae">DiffMAE</span></td>
+              </tr>
+            </table>
           </div>
 
-          <div class="column">
-            <img src="./diffmae/images/video-1.gif" width="94%" height="94%">
+          <div class="column has-text-centered">
+            <img src="./diffmae/images/video-1.gif" width="95%" height="95%">
+
+            <table width="100%">
+              <tr>
+                <td width="33.3%">ground-truth</td>
+                <td width="33.3%">inputs</td>
+                <td width="33.3"><span class="diffmae">DiffMAE</span></td>
+              </tr>
+            </table>
           </div>
         </div>
         <!--/ Video Inpainting. -->
