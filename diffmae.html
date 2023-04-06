@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Diffusion Models as Masked Autoencoder">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DiffMAE</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./diffmae/css/bulma.min.css">
+  <link rel="stylesheet" href="./diffmae/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./diffmae/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./diffmae/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./diffmae/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.20.0/gradio.js" ></script>
+  <style>
+  .src-image{
+    margin-bottom: -5%;
+  }
+  .dst-image {
+    margin-top:-95%;
+    opacity: 0;
+    transition: 1s ease;
+  }
+  .overlay-image:hover .dst-image {
+    opacity: 1;
+  }
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            Diffusion Models as Masked Autoencoders
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://weichen582.github.io/">Chen Wei</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://karttikeya.github.io/">Karttikeya Mangalam</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="http://www.cs.cmu.edu/~poyaoh/">Po-Yao Huang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://lyttonhao.github.io/">Yanghao Li</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://haoqifan.github.io/">Haoqi Fan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://howardhsu.github.io//">Hu Xu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://csrhddlam.github.io/">Huiyu Wang</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://cihangxie.github.io/">Cihang Xie</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.jhu.edu/~ayuille/">Alan Yuille</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://feichtenhofer.github.io/">Christoph Feichtenhofer</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>FAIR, Meta AI</span>,
+            <span class="author-block"><sup>2</sup>Johns Hopkins University</span>,
+            <span class="author-block"><sup>3</sup>UC Santa Cruz</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./diffmae/images/teaser.gif">
+      <h2 class="subtitle has-text-centered">
+        <!-- <span class="diffmae">DiffMAE</span> turns selfie videos from your phone into free-viewpoint portraits. -->
+
+          <table width="100%">
+            <tr>
+              <th width="16.6%">ground-truth</th>
+              <th width="16.6%"><span class="diffmae">DiffMAE</span></th>
+              <th width="16.6%">MAE</th>
+              <th width="16.6%">ground-truth</th>
+              <th width="16.6%"><span class="diffmae">DiffMAE</span></th>
+              <th width="16.6%">MAE</th>
+            </tr>
+          </table>
+
+          <h2 class="subtitle has-text-centered">
+            <span class="diffmae">DiffMAE</span> gradually adds visual details by diffusion for masked autoencoding.
+          </h2>
+
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"><span class="diffmae">DiffMAE</span></h2>
+        <div class="content has-text-justified">
+          <p>
+            It has been a longstanding belief that generation can facilitate a true understanding
+            of visual data. 
+          </p>
+          <p>
+            In line with this, we revisit generatively pre-training visual representations
+            in light of denoising diffusion models, and build connection between
+            diffusion models and masked autoencoders.
+          </p>
+          <p>
+            In particular, we condition diffusion models on masked input and formulate diffusion models
+            as masked autoencoders (<span class="diffmae">DiffMAE</span>).
+            Our approach can:
+
+            <ul>
+              <li>Serve as a strong initialization for downstream <em>recognition</em> tasks;</li>
+              <li>Conduct <em>generative</em> image inpainting;</li>
+              <li>Be effortlessly extended to <em>video</em>.</li>
+            </ul>
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-3">Inpainting</h2> -->
+
+        <!-- Random Masking. -->
+        <h3 class="title is-4">Random Mask Inpainting</h3>
+        <div class="content has-text-justified has-text-centered">
+          <p>
+            The images are from ImageNet-1K validation set.
+            Hover to view the inpainting results.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column overlay-image">
+            <img src="./diffmae/images/random-0-1.png" class="src-image">
+            <img src="./diffmae/images/random-0-2.png" class="dst-image">
+          </div>
+
+          <div class="column overlay-image">
+            <img src="./diffmae/images/random-1-1.png" class="src-image">
+            <img src="./diffmae/images/random-1-2.png" class="dst-image">
+          </div>
+        </div>
+
+
+        <div class="columns">
+          <div class="column overlay-image">
+            <img src="./diffmae/images/random-2-1.png" class="src-image">
+            <img src="./diffmae/images/random-2-2.png" class="dst-image">
+          </div>
+
+          <div class="column overlay-image">
+            <img src="./diffmae/images/random-3-1.png" class="src-image">
+            <img src="./diffmae/images/random-3-2.png" class="dst-image">
+          </div>
+        </div>
+        <!--/ Random Masking. -->
+
+        <!-- Center Masking. -->
+        <h3 class="title is-4">Center Mask Inpainting</h3>
+        <div class="columns">
+          <div class="column overlay-image">
+            <img src="./diffmae/images/center-0-1.png" class="src-image" width="94%" height="94%" >
+            <img src="./diffmae/images/center-0-2.png" class="dst-image" width="94%" height="94%">
+          </div>
+
+          <div class="column overlay-image">
+            <img src="./diffmae/images/center-1-1.png" class="src-image" width="94%" height="94%">
+            <img src="./diffmae/images/center-1-2.png" class="dst-image" width="94%" height="94%">
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column overlay-image">
+            <img src="./diffmae/images/center-2-1.png" class="src-image" width="94%" height="94%">
+            <img src="./diffmae/images/center-2-2.png" class="dst-image" width="94%" height="94%">
+          </div>
+
+          <div class="column overlay-image">
+            <img src="./diffmae/images/center-3-1.png" class="src-image" width="94%" height="94%">
+            <img src="./diffmae/images/center-3-2.png" class="dst-image" width="94%" height="94%">
+          </div>
+        </div>
+        <!--/ Center Masking. -->
+
+        <!-- Video Inpainting. -->
+        <h3 class="title is-4">Video Inpainting</h3>
+        <div class="content has-text-justified has-text-centered">
+          <p>
+            The videos are from Kinetics-400 validation set.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <img src="./diffmae/images/video-0.gif" width="94%" height="94%" >
+          </div>
+
+          <div class="column">
+            <img src="./diffmae/images/video-1.gif" width="94%" height="94%">
+          </div>
+        </div>
+        <!--/ Video Inpainting. -->
+
+      </div>
+      <br/>
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{wei2023diffusion,
+      author    = {Wei, Chen and Mangalam, Karttikeya and Huang, Po-Yao and Li, Yanghao and Fan, Haoqi and Xu, Hu and Wang, Huiyu and Xie, Cihang and Yuille, Alan and Feichtenhofer, Christoph},
+      title     = {Diffusion Models as Masked Autoencoder},
+      journal   = {arXiv preprint arXiv:??},
+      year      = {2023},
+    }</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="content">
+        <p>
+          <a href="https://github.com/nerfies/nerfies.github.io">Template</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
