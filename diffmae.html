@@ -90,7 +90,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/pdf/2304.03283.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -99,7 +99,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/abs/2304.03283"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -187,11 +187,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-
-    <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <!-- <h2 class="title is-3">Inpainting</h2> -->
@@ -362,10 +357,73 @@
         </div>
         <!--/ Video Inpainting. -->
 
+        <!-- Fine-Tuning. -->
+        <h3 class="title is-4">Fine-Tuning Generative Models</h3>
+        <div class="content has-text-justified has-text-centered">
+          <p>
+            While being able to generatively inpaint images,
+            <strong><span class="diffmae">DiffMAE</span></strong> is a strong
+            self-supervised pre-training approach. The performance is:
+            <ul>
+              <li>Comparable to leading self-supervised algorithms that focus solely on recognition;</li>
+              <li>Stronger than other generative based algorithms by a large margin.</li>
+            </ul>            
+          </p>
+        </div>
+
+        <div class="is-centered has-text-centered">
+            <table style="width:70%">
+                <tr>
+                    <th>pre-train</th>
+                    <th>architecture</th>
+                    <th>params. (M)</th>
+                    <th>fine-tuned</th>
+                </tr>
+                <tr>
+                    <td colspan="4" style="border-bottom: 1px solid #ddd;"></td>
+                </tr>
+                <tr>
+                    <td style="color:lightgray">MAE</td>
+                    <td style="color:lightgray">ViT-L</td>
+                    <td style="color:lightgray">304</td>
+                    <td style="color:lightgray">85.9</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="border-bottom: 1px solid #ddd;"></td>
+                </tr>
+                <tr>
+                    <td>iGPT</td>
+                    <td>iGPT-L</td>
+                    <td>1362</td>
+                    <td>72.6</td>
+                </tr>
+                <tr>
+                    <td>ADM</td>
+                    <td>U-Net</td>
+                    <td>211</td>
+                    <td>83.3</td>
+                </tr>
+                <tr>
+                    <td>DDPM</td>
+                    <td>ViT-L</td>
+                    <td>304</td>
+                    <td>83.4</td>
+                </tr>
+                <tr>
+                    <td><strong><span class="diffmae">DiffMAE</span></strong></td>
+                    <td>ViT-L</td>
+                    <td>304</td>
+                    <td><strong>85.8</strong></td>
+                </tr>
+
+                <caption>
+                  Fine-tuning generative models on ImageNet-1K, a system-level comparison.
+                </caption>
+            </table>
+        </div>
       </div>
+      <!--/ Fine-Tuning. -->
       <br/>
-
-
   </div>
 </section>
 
@@ -376,7 +434,7 @@
     <pre><code>@article{wei2023diffusion,
       author    = {Wei, Chen and Mangalam, Karttikeya and Huang, Po-Yao and Li, Yanghao and Fan, Haoqi and Xu, Hu and Wang, Huiyu and Xie, Cihang and Yuille, Alan and Feichtenhofer, Christoph},
       title     = {Diffusion Models as Masked Autoencoder},
-      journal   = {arXiv preprint arXiv:??},
+      journal   = {arXiv preprint arXiv:2304.03283},
       year      = {2023},
     }</code></pre>
   </div>
