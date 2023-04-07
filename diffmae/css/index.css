@@ -155,15 +155,3 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
-
-table {
-  border-collapse: separate;
-  border-spacing: 3px;
-  margin: 0 auto;
-}
-
-caption {
-  padding: 10px;
-  caption-side: bottom;
-  font-weight: 1000;
-}
