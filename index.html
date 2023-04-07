@@ -63,6 +63,12 @@
 
           <tr>
             <td style="padding-left:20px;padding-bottom:10px;width:100%;vertical-align:middle">
+              [04/06/2023] Check out our new work on reformulating <a href="https://arxiv.org/abs/2304.03283">Diffusion Models as Masked Autoencoders</a>.
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-left:20px;padding-bottom:10px;width:100%;vertical-align:middle">
               [10/19/2022] Proud to be an <a href="https://eccv2022.ecva.net/program/outstanding-reviewers/">ECCV 2022 outstanding reviewer</a>.
             </td>
           </tr>
@@ -83,6 +89,75 @@
         </table>
         
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr onmouseout="diffmae_stop()" onmouseover="diffmae_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='diffmae_image'><img style="width:100%;max-width:100%" src='diffmae/interpolation/2.png'></div>
+                <img style="width:100%;max-width:100%" src='diffmae/interpolation/input.png'>
+              </div>
+              <script type="text/javascript">
+                function diffmae_start() {
+                  document.getElementById('diffmae_image').style.opacity = "1";
+                }
+
+                function diffmae_stop() {
+                  document.getElementById('diffmae_image').style.opacity = "0";
+                }
+                diffmae_stop()
+              </script>
+            </td>
+
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2304.03283">
+                <papertitle> Diffusion Models as Masked Autoencoders </papertitle>
+              </a>
+              <br>
+              <a>Chen Wei</a>,
+              <a href="https://karttikeya.github.io/">Karttikeya Mangalam</a>,
+              <a href="http://www.cs.cmu.edu/~poyaoh/">Po-Yao Huang</a>,
+              <a href="https://lyttonhao.github.io/">Yanghao Li</a>,
+              <a href="https://haoqifan.github.io/">Haoqi Fan</a>,
+              <a href="https://howardhsu.github.io/">Hu Xu</a>,
+              <a href="https://csrhddlam.github.io/">Huiyu Wang</a>,
+              <a href="https://cihangxie.github.io/">Cihang Xie</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+              <a href="https://feichtenhofer.github.io/">Christoph Feichtenhofer</a>
+              <br>
+              <em>tech report </em>, 2023
+              <br>
+              <a href="https://arxiv.org/abs/2304.03283">arXiv</a>  /
+              <a href="https://weichen582.github.io/diffmae.html">project page</a>
+              <br>
+            </td>
+          </tr>
+        </table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2208.12256">
+                <papertitle> Masked Autoencoders Enable Efficient Knowledge Distillers </papertitle>
+              </a>
+              <br>
+              <a>Yutong Bai</a>,
+              <a href="https://zeyuwang.netlify.app/">Zeyu Wang</a>,
+              <a href="https://lambert-x.github.io/">Junfei Xiao</a>,
+              <strong>Chen Wei</strong>,
+              <a href="https://csrhddlam.github.io/">Huiyu Wang</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+              <a href="https://yuyinzhou.github.io/">Yuyin Zhou</a>,
+              <a href="https://cihangxie.github.io/">Cihang Xie</a>
+              <br>
+              <em>CVPR </em>, 2023
+              <br>
+              <a href="https://arxiv.org/abs/2208.12256">arXiv</a>  /
+              <a href="https://github.com/UCSC-VLAA/DMAE">code</a>
+              <br>
+            </td>
+          </tr>
+        </table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <a href="https://arxiv.org/abs/2203.11709">
@@ -102,8 +177,9 @@
               <br>
             </td>
           </tr>
+        </table>
           
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <a href="https://arxiv.org/abs/2205.01721">
@@ -125,6 +201,7 @@
               <br>
             </td>
           </tr>
+        </table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr onmouseout="maskfeat_stop()" onmouseover="maskfeat_start()">
@@ -403,6 +480,9 @@
                   <heading>Experience</heading>
                   <!-- <br /> -->
               <ul>
+                <li>Student Researcher, Google Brain, Summer 2023</li>
+              </ul>
+              <ul>
                 <li>Research Intern, Facebook AI Research (Meta AI), Summer 2022</li>
               </ul>
               <ul>
@@ -429,7 +509,7 @@
             <td style="padding:0px">
               <br>
               <p style="text-align:right;font-size:small;">
-                  Last update: Oct. 2022 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
+                  Last update: Apr. 2023 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
               </p>
             </td>
           </tr>
