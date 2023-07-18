@@ -37,14 +37,13 @@
                <a href="https://cs.jhu.edu/~ayuille/">Alan L. Yuille</a>.
               </p>
               <p>
-                Before that, I received my B.S. in Computer Science from Peking University. I also spent great time at FAIR in Meta, Google, and Noah's Ark Lab.
+                I received my B.S. in Computer Science from Peking University. I spent great time at Google Brain, FAIR @ Meta, Google Cloud, and Noah's Ark Lab.
               </p>
               <p>
-                My research focus is self-supervised learning for computer vision.
+                My research lies at the intersection of computer vision and machine learning, with a focus on reliable and scalable representation learning.
               </p>
               <p style="text-align:center">
                 <a href="mailto:weichen3012@gmail.com">weichen3012 [at] gmail [dot] com</a> &nbsp/&nbsp
-                <a href="https://github.com/weichen582">GitHub</a> &nbsp/&nbsp
                 <a href="https://scholar.google.com/citations?hl=en&user=LHQGpBUAAAAJ">Google Scholar</a>
               </p>
             </td>
@@ -60,6 +59,19 @@
               <heading>News</heading>
             </td>
           </tr>
+
+          <tr>
+            <td style="padding-left:20px;padding-bottom:10px;width:100%;vertical-align:middle">
+              [07/16/2023] DiffMAE and SMAUG accepted to ICCV 2023</a>.
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-left:20px;padding-bottom:10px;width:100%;vertical-align:middle">
+              [04/23/2023] Hiera accepted to ICML 2023 as oral presentation</a>.
+            </td>
+          </tr>
+
 
           <tr>
             <td style="padding-left:20px;padding-bottom:10px;width:100%;vertical-align:middle">
@@ -87,13 +99,14 @@
             </td>
           </tr>
         </table>
-        
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr onmouseout="diffmae_stop()" onmouseover="diffmae_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+
+          <tr onmouseout="diffmae_stop()" onmouseover="diffmae_start()" bgcolor="#ffffd0">
+            <td style="padding:40px;padding-top:15px;width:30%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='diffmae_image'><img style="width:100%;max-width:100%" src='diffmae/interpolation/2.png'></div>
-                <img style="width:100%;max-width:100%" src='diffmae/interpolation/input.png'>
+                <div class="two" id='diffmae_image'><img style="width: 120%; height: auto;" src='diffmae/interpolation/2.png'></div>
+                <img style="width: 120%; height: auto;" src='diffmae/interpolation/input.png'>
               </div>
               <script type="text/javascript">
                 function diffmae_start() {
@@ -107,12 +120,12 @@
               </script>
             </td>
 
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:40px;padding-top:70px;width:70%;vertical-align:top">
               <a href="https://arxiv.org/abs/2304.03283">
                 <papertitle> Diffusion Models as Masked Autoencoders </papertitle>
               </a>
               <br>
-              <a>Chen Wei</a>,
+              <strong>Chen Wei</strong>,
               <a href="https://karttikeya.github.io/">Karttikeya Mangalam</a>,
               <a href="http://www.cs.cmu.edu/~poyaoh/">Po-Yao Huang</a>,
               <a href="https://lyttonhao.github.io/">Yanghao Li</a>,
@@ -123,18 +136,93 @@
               <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
               <a href="https://feichtenhofer.github.io/">Christoph Feichtenhofer</a>
               <br>
-              <em>tech report </em>, 2023
+              <em>ICCV </em>, 2023
               <br>
               <a href="https://arxiv.org/abs/2304.03283">arXiv</a>  /
-              <a href="https://weichen582.github.io/diffmae.html">project page</a>
+              <a href="https://weichen582.github.io/diffmae.html">project page</a> /
+              <a href="https://www.marktechpost.com/2023/04/11/a-new-ai-research-integrates-masking-into-diffusion-models-to-develop-diffusion-masked-autoencoders-diffmae-a-self-supervised-framework-designed-for-recognizing-and-generating-images-and-videos/">Marktechpost</a>
               <br>
             </td>
           </tr>
-        </table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:40px;padding-left:0px;width:30%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='smaug_image'><img style="width: 150%; height: auto;" src='images_new/smaug.png'></div>
+              </div>
+            </td>
+
+            <td style="padding:40px;padding-top:30px;width:70%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2211.11446">
+                <papertitle> SMAUG: Sparse Masked Autoencoder for Efficient Video-Language Pre-Training </papertitle>
+              </a>
+              <br>
+              <a href="https://scholar.google.com/citations?user=0WFC2w0AAAAJ">Yuanze Lin</a>,
+              <strong>Chen Wei</strong>,
+              <a href="https://csrhddlam.github.io/">Huiyu Wang</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+              <a href="https://cihangxie.github.io/">Cihang Xie</a>
+              <br>
+              <em>ICCV </em>, 2023
+              <br>
+              <a href="https://arxiv.org/abs/2211.11446">arXiv</a>
+              <br>
+            </td>
+          </tr>
+
+          <tr onmouseout="hiera_stop()" onmouseover="hiera_start()" bgcolor="#ffffd0">
+            <td style="padding:40px;padding-left:30px;padding-top:0px;width:30%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='hiera_image'><img style="width: 110%; height: auto;" src='images_new/hiera_before.png'></div>
+                <img style="width: 110%; height: auto;" src='images_new/hiera_after.png'>
+              </div>
+              <script type="text/javascript">
+                function hiera_start() {
+                  document.getElementById('hiera_image').style.opacity = "1";
+                }
+
+                function hiera_stop() {
+                  document.getElementById('hiera_image').style.opacity = "0";
+                }
+                hiera_stop()
+              </script>
+            </td>
+
+            <td style="padding:40px;padding-top:50px;width:70%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2203.11709">
+                <papertitle> Hiera: A Hierarchical Vision Transformer without the Bells-and-Whistles </papertitle>
+              </a>
+              <br>
+              <a href="https://scholar.google.com/citations?user=4LWx24UAAAAJ">Chaitanya Ryali</a>*,
+              <a href="https://scholar.google.com/citations?user=aMpbemkAAAAJ">Yuan-Ting Hu</a>*,
+              <a href="https://dbolya.github.io/">Daniel Bolya</a>*,
+              <strong>Chen Wei</strong>,
+              <a href="https://haoqifan.github.io/">Haoqi Fan</a>,
+              <a href="http://www.cs.cmu.edu/~poyaoh/">Po-Yao Huang</a>,
+              <a href="https://scholar.google.com/citations?hl=en&user=Qwm6ZOYAAAAJ">Vaibhav Aggarwal</a>,
+              <a href="https://scholar.google.com/citations?hl=en&user=42v1i_YAAAAJ">Arkabandhu Chowdhury</a>,
+              <a href="https://omidpoursaeed.github.io/">Omid Poursaeed</a>,
+              <a href="https://faculty.cc.gatech.edu/~judy/">Judy Hoffman</a>,
+              <a href="https://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a>,
+              <a href="https://lyttonhao.github.io/">Yanghao Li</a>*,
+              <a href="https://feichtenhofer.github.io/">Christoph Feichtenhofer</a>*
+              <br>
+              <em>ICML </em>, 2023 <strong>Oral</strong>
+              <br>
+              <a href="https://arxiv.org/abs/2306.00989/">arXiv</a>  /
+              <a href="https://github.com/facebookresearch/hiera">code</a>
+              <br>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:40px;padding-left:20px;padding-bottom:0px;width:30%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dmae_image'><img style="width: 130%; height: auto;" src='images_new/dmae.png'></div>
+              </div>
+            </td>
+
+            <td style="padding:40px;padding-top:10px;padding-bottom:0px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/abs/2208.12256">
                 <papertitle> Masked Autoencoders Enable Efficient Knowledge Distillers </papertitle>
               </a>
@@ -155,11 +243,26 @@
               <br>
             </td>
           </tr>
-        </table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+          <tr onmouseout="cp2_stop()" onmouseover="cp2_start()">
+            <td style="padding:40px;padding-left:30px;padding-top:20px;width:30%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='cp2_image'><img style="width: 120%; height: auto;" src='images_new/cp2_before.png'></div>
+                <img style="width: 120%; height: auto;" src='images_new/cp2_after.png'>
+              </div>
+              <script type="text/javascript">
+                function cp2_start() {
+                  document.getElementById('cp2_image').style.opacity = "1";
+                }
+
+                function cp2_stop() {
+                  document.getElementById('cp2_image').style.opacity = "0";
+                }
+                cp2_stop()
+              </script>
+            </td>
+
+            <td style="padding:40px;padding-top:40px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/abs/2203.11709">
                 <papertitle> CP2: Copy-Paste Contrastive Pretraining for Semantic Segmentation </papertitle>
               </a>
@@ -177,11 +280,15 @@
               <br>
             </td>
           </tr>
-        </table>
-          
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
           <tr>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:40px;padding-left:40px;width:30%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='li_image'><img style="width: 120%; height: auto;" src='images_new/eccv2023li.png'></div>
+              </div>
+            </td>
+
+            <td style="padding:40px;padding-top:50px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/abs/2205.01721">
                 <papertitle> In Defense of Image Pre-Training for Spatiotemporal Recognition</papertitle>
               </a>
@@ -201,15 +308,13 @@
               <br>
             </td>
           </tr>
-        </table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr onmouseout="maskfeat_stop()" onmouseover="maskfeat_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+          <tr onmouseout="maskfeat_stop()" onmouseover="maskfeat_start()" bgcolor="#ffffd0">
+            <td style="padding:40px;padding-top:0px;padding-left:30px;width:30%;vertical-align:middle">
               <br></br>
               <div class="one">
-                <div class="two" id='maskfeat_image'><img style="width:100%" src='images_new/maskfeat_after.png'></div>
-                <img style="width:100%" src='images_new/maskfeat_before.png'>
+                <div class="two" id='maskfeat_image'><img style="width: 120%; height: auto;" src='images_new/maskfeat_after.png'></div>
+                <img style="width: 120%; height: auto;" src='images_new/maskfeat_before.png'>
               </div>
               <script type="text/javascript">
                 function maskfeat_start() {
@@ -222,19 +327,21 @@
                 maskfeat_stop()
               </script>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:40px;padding-top:40px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/pdf/2112.09133.pdf">
                 <papertitle> Masked Feature Prediction for Self-Supervised Visual Pre-Training </papertitle>
               </a>
               <br>
-              <strong>Chen Wei</strong>,
+              <strong>Chen Wei*</strong>,
               <a href="https://haoqifan.github.io/">Haoqi Fan</a>,
               <a href="https://vcl.ucsd.edu/~sxie/">Saining Xie</a>,
               <a href="https://chaoyuan.org/">Chao-Yuan Wu</a>,
               <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
-              <a href="https://feichtenhofer.github.io/">Christoph Feichtenhofer</a>
+              <a href="https://feichtenhofer.github.io/">Christoph Feichtenhofer*</a>
               <br>
               <em>CVPR </em>, 2022
+              <br>
+              <a href="https://www.paperdigest.org/2023/04/most-influential-cvpr-papers-2023-04/"><strong>Most Influential CVPR Papers (2023-04)</strong></a>
               <br>
               <a href="https://arxiv.org/pdf/2112.09133.pdf">arXiv</a>  /
               <a href="https://github.com/facebookresearch/SlowFast">code at pySlowFast</a>
@@ -242,11 +349,11 @@
             </td>
           </tr>
 
-          <tr onmouseout="ibot_stop()" onmouseover="ibot_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+          <tr onmouseout="ibot_stop()" onmouseover="ibot_start()" bgcolor="#ffffd0">
+            <td style="padding:40px;padding-left:30px;width:30%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='ibot_image'><img style="width:100%;max-width:100%" src='images_new/ibot_after.png'></div>
-                <img style="width:100%;max-width:100%" src='images_new/ibot_before.png'>
+                <div class="two" id='ibot_image'><img style="width: 120%; height: auto;" src='images_new/ibot_after.png'></div>
+                <img style="width: 120%; height: auto;" src='images_new/ibot_before.png'>
               </div>
               <script type="text/javascript">
                 function ibot_start() {
@@ -259,7 +366,7 @@
                 ibot_stop()
               </script>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:40px;padding-top:80px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/pdf/2111.07832.pdf">
                 <papertitle> iBOT: Image BERT Pre-Training with Online Tokenizer </papertitle>
               </a>
@@ -277,17 +384,16 @@
               <a href="https://arxiv.org/pdf/2111.07832.pdf">arXiv</a>  /
               <a href="https://github.com/bytedance/ibot">code</a> /
               <a href="https://medium.com/syncedreview/meet-ibot-a-masked-image-modelling-framework-that-enables-bert-like-pretraining-for-vision-da01002115e7">press</a>
-
               <br>
               <p></p>
             </td>
           </tr>
 
-          <tr onmouseout="crest_stop()" onmouseover="crest_start()">
-            <td style="padding:8px;width:25%;vertical-align:middle">
+          <tr onmouseout="crest_stop()" onmouseover="crest_start()" bgcolor="#ffffd0">
+            <td style="padding:40px;padding-left:30px;width:30%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='crest_image'><img style="width:110%" src='images_new/crest_after.png'></div>
-                <img style="width:110%" src='images_new/crest_before.png'>
+                <div class="two" id='crest_image'><img style="width: 120%; height: auto;" src='images_new/crest_after.png'></div>
+                <img style="width: 120%; height: auto;" src='images_new/crest_before.png'>
               </div>
               <script type="text/javascript">
                 function crest_start() {
@@ -300,7 +406,7 @@
                 crest_stop()
               </script>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:40px;padding-top:60px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/pdf/2102.09559.pdf">
                 <papertitle> CReST: A Class-Rebalancing Self-Training Framework for Imbalanced Semi-Supervised Learning </papertitle>
               </a>
@@ -323,10 +429,10 @@
           </tr>
 
           <tr onmouseout="co2_stop()" onmouseover="co2_start()">
-            <td style="padding:7px;width:25%;vertical-align:bottom">
+            <td style="padding:40px;padding-left:15px;width:30%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='co2_image'><img style="width:110%" src='images_new/co2_after.png'></div>
-                <img style="width:110%" src='images_new/co2_before.png'>
+                <div class="two" id='co2_image'><img style="width: 130%; height: auto;" src='images_new/co2_after.png'></div>
+                <img style="width: 130%; height: auto;" src='images_new/co2_before.png'>
               </div>
               <script type="text/javascript">
                 function co2_start() {
@@ -339,7 +445,7 @@
                 co2_stop()
               </script>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:40px;padding-top:65px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/abs/2010.02217">
                 <papertitle> CO2: Consistent Contrast for Unsupervised Visual Representation Learning</papertitle>
               </a>
@@ -360,10 +466,10 @@
           </tr>
 
           <tr onmouseout="puzzle_stop()" onmouseover="puzzle_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+            <td style="padding:40px;padding-left:15px;width:30%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='puzzle_image'><img src='images_new/puzzle_after.png'></div>
-                <img src='images_new/puzzle_before.png'>
+                <div class="two" id='puzzle_image'><img style="width: 130%; height: auto;" src='images_new/puzzle_after.png'></div>
+                <img style="width: 130%; height: auto;" src='images_new/puzzle_before.png'>
               </div>
               <script type="text/javascript">
                 function puzzle_start() {
@@ -376,7 +482,7 @@
                 puzzle_stop()
               </script>
             </td>
-            <td style="padding:30px;width:75%;vertical-align:middle">
+            <td style="padding:40px;;padding-top:70px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/abs/1812.00329">
                 <papertitle> Iterative Reorganization with Weak Spatial Constraints: </br> Solving Arbitrary Jigsaw Puzzles for Unsupervised Representation Learning</papertitle>
               </a>
@@ -400,10 +506,10 @@
           </tr>
 
           <tr onmouseout="retinex_stop()" onmouseover="retinex_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+            <td style="padding:40px;padding-left:15px;width:30%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='retinex_image'><img src='images_new/retinex_after.png'></div>
-                <img src='images_new/retinex_before.png'>
+                <div class="two" id='retinex_image'><img style="width: 130%; height: auto;" src='images_new/retinex_after.png'></div>
+                <img style="width: 130%; height: auto;" src='images_new/retinex_before.png'>
               </div>
               <script type="text/javascript">
                 function retinex_start() {
@@ -416,7 +522,8 @@
                 retinex_stop()
               </script>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+
+            <td style="padding:40px;padding-top:105px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/abs/1808.04560">
                 <papertitle> Deep Retinex Decomposition for Low-Light Enhancement </papertitle>
               </a>
@@ -426,9 +533,9 @@
               <a href="https://flyywh.github.io/index.html">Wenhan Yang</a>,
               <a href="http://www.icst.pku.edu.cn/struct/people/liujiaying.html">Jiaying Liu</a>
               <br>
-              <em>BMVC</em>, 2018, <strong>Oral</strong>
+              <em>BMVC</em>, 2018 <strong>Oral</strong>
               <br>
-              <a style="color: black;" href="https://scholar.google.com/citations?hl=en&vq=eng_computervisionpatternrecognition&view_op=list_hcore&venue=T_DfB2ikUbwJ.2022"><strong>2nd most cited BMVC paper over the last five years</strong></a>
+              <a href="https://scholar.google.com/citations?hl=en&vq=eng_computervisionpatternrecognition&view_op=list_hcore&venue=T_DfB2ikUbwJ.2022"><strong>Most Cited BMVC Papers Over the Last Five Years No.2</strong></a>
               </br>
               <a href="https://arxiv.org/abs/1808.04560">arXiv</a> /
               <a href="https://github.com/weichen582/RetinexNet">code</a> /
@@ -439,11 +546,11 @@
           </tr>
 
           <tr onmouseout="glad_stop()" onmouseover="glad_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+            <td style="padding:40px;padding-left:20px;padding-top:20px;width:30%;vertical-align:middle">
               <br></br>
               <div class="one">
-                <div class="two" id='glad_image'><img src='images_new/glad_after.png'></div>
-                <img src='images_new/glad_before.png'>
+                <div class="two" id='glad_image'><img style="width: 130%; height: auto;" src='images_new/glad_after.png'></div>
+                <img style="width: 130%; height: auto;" src='images_new/glad_before.png'>
               </div>
               <script type="text/javascript">
                 function glad_start() {
@@ -456,7 +563,8 @@
                 glad_stop()
               </script>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+    
+            <td style="padding:40px;width:70%;vertical-align:middle">
               <a href="https://ieeexplore.ieee.org/document/8373911">
                 <papertitle> GLADNet: Low-Light Enhancement Network with Global Awareness</papertitle>
               </a>
@@ -511,7 +619,7 @@
             <td style="padding:0px">
               <br>
               <p style="text-align:right;font-size:small;">
-                  Last update: Apr. 2023 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
+                  Last update: July. 2023 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
               </p>
             </td>
           </tr>
