@@ -145,11 +145,49 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 
+          <tr onmouseout="dediffusion_stop()" onmouseover="dediffusion_start()" bgcolor="#ffffd0">
+            <td style="padding:40px;padding-top:15px;width:30%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dediffusion_image'><img style="width: 120%; height: auto;" src='images_new/dediffusion_text.png'></div>
+                <img style="width: 120%; height: auto;" src='images_new/corgi.jpeg'>
+              </div>
+              <script type="text/javascript">
+                function dediffusion_start() {
+                  document.getElementById('dediffusion_image').style.opacity = "1";
+                }
+
+                function dediffusion_stop() {
+                  document.getElementById('dediffusion_image').style.opacity = "0";
+                }
+                dediffusion_stop()
+              </script>
+            </td>
+
+            <td style="padding:40px;padding-top:70px;width:70%;vertical-align:top">
+              <a href="https://arxiv.org/abs/2311.00618">
+                <papertitle> De-Diffusion Makes Text a Strong Cross-Modal Interface </papertitle>
+              </a>
+              <br>
+              <b>Chen Wei</b>,
+              <a href="https://www.cs.jhu.edu/~cxliu/", class="author">Chenxi Liu</a>,
+              <a href="https://www.cs.jhu.edu/~syqiao/", class="author">Siyuan Qiao</a>,
+              <a href="https://zhishuai.xyz/", class="author">Zhishuai Zhang</a>,
+              <a href="http://cs.jhu.edu/~ayuille/", class="author">Alan Yuille</a>,
+              <a href="https://jiahuiyu.com/", class="author", class="author">Jiahui Yu</a>
+              <br>
+              <em>arXiv </em>, 2023
+              <br>
+              <a href="https://arxiv.org/abs/2311.00618">arXiv</a>  /
+              <a href="https://dediffusion.github.io/">project page</a>
+              <br>
+            </td>
+          </tr>
+
           <tr onmouseout="diffmae_stop()" onmouseover="diffmae_start()" bgcolor="#ffffd0">
             <td style="padding:40px;padding-top:15px;width:30%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='diffmae_image'><img style="width: 120%; height: auto;" src='diffmae/interpolation/2.png'></div>
-                <img style="width: 120%; height: auto;" src='diffmae/interpolation/input.png'>
+                <div class="two" id='diffmae_image'><img style="width: 120%; height: auto;" src='diffmae/interpolation/input.png'></div>
+                <img style="width: 120%; height: auto;" src='diffmae/interpolation/2.png'>
               </div>
               <script type="text/javascript">
                 function diffmae_start() {
@@ -290,8 +328,8 @@
           <tr onmouseout="cp2_stop()" onmouseover="cp2_start()">
             <td style="padding:40px;padding-left:30px;padding-top:20px;width:30%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='cp2_image'><img style="width: 120%; height: auto;" src='images_new/cp2_before.png'></div>
-                <img style="width: 120%; height: auto;" src='images_new/cp2_after.png'>
+                <div class="two" id='cp2_image'><img style="width: 120%; height: auto;" src='images_new/cp2_after.png''></div>
+                <img style="width: 120%; height: auto;" src='images_new/cp2_before.png'>
               </div>
               <script type="text/javascript">
                 function cp2_start() {
