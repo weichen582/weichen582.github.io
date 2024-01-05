@@ -135,3 +135,11 @@ span.highlight {
   font-size: 16px;
   color: gray
 }
+
+.highlight {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  color: red
+}
+
