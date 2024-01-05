@@ -45,23 +45,22 @@
           <tr>
             <td style="padding-bottom:10px;width:100%;vertical-align:middle">
               My research lies at the intersection of <b>machine learning</b> and <b>computer vision</b>, driven by the goal of developing flexible and general-purpose intelligent systems.
-              My research has primarily focused on two critical steps toward this goal, (1) to encode enormously complex raw visual signals to structured representations that are easier to understand and process for machine, and (2) to connect visual representations to higher-order cognition and commonsense reasoning about the world.
-              To address these challenges, I have been working on:
+              My research has primarily focused on two critical steps toward this goal, (1) to encode enormously complex raw visual signals to structured representations that are easier to understand and process for machine, and (2) to connect visual representations to higher-order cognition and commonsense reasoning about the world:
             </td>
           </tr>
 
           <tr>
             <td width="100%" valign="middle">
               <ul>
-                <li><b>Unsupervised Learning</b>: discovering natural structures in the raw data to obtain <a href="https://arxiv.org/abs/2010.02217">structured representations</a> that are scalable to wide domains in <a href="https://arxiv.org/abs/2111.07832">images</a> and <a href="https://arxiv.org/abs/2112.09133">videos</a>, and applicable to a <a href="https://arxiv.org/abs/2306.00989">variety </a> of <a href="https://arxiv.org/abs/2203.11709">tasks</a>.</li>
-              </ul>
-
-              <ul>
                 <li><b>Generative Understanding</b>: <a href="https://weichen582.github.io/diffmae.html">constructing</a> and <a href="https://dediffusion.github.io/">learning from</a> generative models of the world.</li>
               </ul>
 
               <ul>
                 <li><b>Vision and Language</b>: <a href="https://dediffusion.github.io/">connecting</a> <a href="https://arxiv.org/abs/2211.11446">visual representations</a> to commonsense knowledge base like large language models to achieve higher-order cognition.</li>
+              </ul>
+
+              <ul>
+                <li><b>Self-Supervised Learning</b>: discovering natural structures in the raw data to obtain <a href="https://arxiv.org/abs/2010.02217">structured representations</a> that are scalable to wide domains in <a href="https://arxiv.org/abs/2111.07832">images</a> and <a href="https://arxiv.org/abs/2112.09133">videos</a>, and applicable to a <a href="https://arxiv.org/abs/2306.00989">variety </a> of <a href="https://arxiv.org/abs/2203.11709">tasks</a>.</li>
               </ul>
             </td>
           </tr>
@@ -77,6 +76,12 @@
           <tr>
             <td style="padding-top:20px;padding-bottom:20px;width:100%;vertical-align:middle">
               <heading>News</heading>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom:10px;width:100%;vertical-align:middle">
+              [12/01/2023] Gave a talk at Cornell Tech, hosted by <a href="https://www.cs.cornell.edu/~snavely/">Prof. Noah Snavely</a>.
             </td>
           </tr>
 
@@ -184,6 +189,45 @@
             </td>
           </tr>
 
+          <tr onmouseout="i2a_stop()" onmouseover="i2a_start()">
+            <td style="padding:40px;padding-left:50px;padding-top:15px;padding-bottom:100px;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='i2a_image'><img style="width: 110%; height: auto;" src='images_new/i2a_2.png'></div>
+                <img style="width: 110%; height: auto;" src='images_new/i2a_1.png'>
+              </div>
+              <script type="text/javascript">
+                function i2a_start() {
+                  document.getElementById('i2a_image').style.opacity = "1";
+                }
+
+                function i2a_stop() {
+                  document.getElementById('i2a_image').style.opacity = "0";
+                }
+                i2a_stop()
+              </script>
+            </td>
+
+            <td style="padding:40px;padding-top:15px;width:70%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2311.15551">
+                <papertitle> Instruct2Attack: Language-Guided Semantic Adversarial Attacks </papertitle>
+              </a>
+              <br>
+              <a href="https://joellliu.github.io/", class="author">Jiang Liu</a>,
+              <b>Chen Wei</b>,
+              <a href="https://aiem.jhu.edu/people/yuxiang-guo/", class="author">Yuxiang Guo</a>,
+              <a href="https://heng14.github.io/", class="author">Heng Yu</a>,
+              <a href="http://cs.jhu.edu/~ayuille/", class="author">Alan Yuille</a>,
+              <a href="https://www.cs.umd.edu/~sfeizi/", class="author", class="author">Soheil Feizi</a>,
+              <a href="https://samuel930930.github.io/", class="author", class="author">Chun Pong Lau</a>,
+              <a href="https://engineering.jhu.edu/ece/faculty/rama-chellappa/", class="author", class="author">Rama Chellappa</a>
+              <br>
+              <em>arXiv </em>, 2023
+              <br>
+              <a href="https://arxiv.org/abs/2311.15551">arXiv</a>
+              <br>
+            </td>
+          </tr>
+
           <tr onmouseout="diffmae_stop()" onmouseover="diffmae_start()" bgcolor="#ffffd0">
             <td style="padding:40px;padding-top:15px;width:30%;vertical-align:middle">
               <div class="one">
@@ -228,7 +272,7 @@
           </tr>
 
           <tr>
-            <td style="padding:40px;padding-left:0px;width:30%;vertical-align:middle">
+            <td style="padding:40px;padding-left:15px;width:30%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='smaug_image'><img style="width: 150%; height: auto;" src='images_new/smaug.png'></div>
               </div>
@@ -253,7 +297,7 @@
           </tr>
 
           <tr onmouseout="hiera_stop()" onmouseover="hiera_start()" bgcolor="#ffffd0">
-            <td style="padding:40px;padding-left:30px;padding-top:0px;width:30%;vertical-align:middle">
+            <td style="padding:40px;padding-left:40px;padding-top:0px;width:30%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='hiera_image'><img style="width: 110%; height: auto;" src='images_new/hiera_before.png'></div>
                 <img style="width: 110%; height: auto;" src='images_new/hiera_after.png'>
@@ -357,8 +401,8 @@
               <br>
               <em>ECCV </em>, 2022
               <br>
-              <a href="https://arxiv.org/abs/2203.11709", class="author">arXiv</a>  /
-              <a href="https://github.com/wangf3014/CP2", class="author">code</a>
+              <a href="https://arxiv.org/abs/2203.11709">arXiv</a>  /
+              <a href="https://github.com/wangf3014/CP2">code</a>
               <br>
             </td>
           </tr>
@@ -409,7 +453,7 @@
                 maskfeat_stop()
               </script>
             </td>
-            <td style="padding:40px;padding-top:40px;width:70%;vertical-align:middle">
+            <td style="padding:40px;padding-top:60px;width:70%;vertical-align:middle">
               <a href="https://arxiv.org/pdf/2112.09133.pdf">
                 <papertitle> Masked Feature Prediction for Self-Supervised Visual Pre-Training </papertitle>
               </a>
@@ -427,7 +471,7 @@
               <a href="https://github.com/facebookresearch/SlowFast">code at pySlowFast</a>
               <br>
               <br>
-              <a href="https://www.paperdigest.org/2023/04/most-influential-cvpr-papers-2023-04/">Most Influential CVPR Papers (2023-04)</a>
+              <a href="https://www.paperdigest.org/2023/04/most-influential-cvpr-papers-2023-04/">Most Influential CVPR Papers 2023</a>
             </td>
           </tr>
 
@@ -621,7 +665,7 @@
               <a href="https://daooshee.github.io/BMVC2018website/">project page & dataset</a>
               <br>
               <br>
-              <a href="https://scholar.google.com/citations?hl=en&vq=eng_computervisionpatternrecognition&view_op=list_hcore&venue=T_DfB2ikUbwJ.2022">Most Cited BMVC Papers Over the Last Five Years No.2</a>
+              <a href="https://scholar.google.com/citations?hl=en&vq=eng_computervisionpatternrecognition&view_op=list_hcore&venue=T_DfB2ikUbwJ.2023">Most Cited BMVC Papers Over the Last Five Years</a>
               <p></p>
             </td>
           </tr>
@@ -702,7 +746,7 @@
             <td style="padding:0px">
               <br>
               <p style="text-align:right;font-size:small;">
-                  Last update: Nov. 2023 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
+                  Last update: Dec. 2023 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
               </p>
             </td>
           </tr>
