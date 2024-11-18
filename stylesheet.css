@@ -91,6 +91,11 @@ strong {
 
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+heading-2 {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 24px;
 }
 
@@ -106,18 +111,29 @@ name {
 }
 
 .one {
-  width: 160px;
-  height: 160px;
+  width: 230px;
+  height: auto;
   position: relative;
 }
 
 .two {
-  width: 160px;
-  height: 160px;
+  width: 230px;
+  height: auto;
   position: absolute;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
+}
+
+.pub-image-box {
+  padding:30px;
+  width:30%;
+  vertical-align:middle
+}
+
+.pub-text-box {
+  width:70%;
+  vertical-align:middle
 }
 
 .fade {
@@ -139,7 +155,21 @@ span.highlight {
 .highlight {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 16px;
-  font-style: italic;
+  font-weight: bold;
   color: red
+}
+
+.icon {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: "Font Awesome 5 Brands";
+  font-size: 1.33333em;
+  line-height: .75em;
+  vertical-align: -.0667em;
 }
 
