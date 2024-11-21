@@ -167,6 +167,17 @@
           <tr>
             <td style="padding-top:20px;padding-bottom:20px;width:100%;vertical-align:middle">
               <heading>Publications</heading>
+              <span class="filters">
+                <a id="filter-selected" onclick="applyFilter(this, showSelected)">Selected</a> /
+                <a onclick="applyFilter(this, showByDate)">All</a>
+              </span>
+              <p><span class="filters">
+              <strong>Research Topics:</strong>
+                  <a onclick="applyFilter(this, filterByTopic('gen'))">Generative Understanding</a> / 
+                  <a onclick="applyFilter(this, filterByTopic('multimodal'))">Multimodal Learning</a> / 
+                  <a onclick="applyFilter(this, filterByTopic('ssl'))">Self-Supervised Learning</a>
+              </span></p>
+              <p><em>(* indicates equal contribution)</em></p>
             </td>
           </tr>
         </table>
@@ -175,10 +186,10 @@
 
         <!-- -------- -->
         <!-- -------- -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:collapse;margin-right:auto;margin-left:auto;">
-
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:collapse;margin-right:auto;margin-left:auto;" id="publicationsTable">
+          <tbody>
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="dediffusion_stop()" onmouseover="dediffusion_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line publication" onmouseout="dediffusion_stop()" onmouseover="dediffusion_start()" bgcolor="#ffffd0" data-selected="true" data-topic="gen,multimodal">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='dediffusion_image'><img style="width:100%; height: auto;" src='images_new/dediffusion_text.png'></div>
@@ -218,7 +229,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="difftumor_stop()" onmouseover="difftumor_start()">
+          <tr class="bottom-line publication" onmouseout="difftumor_stop()" onmouseover="difftumor_start()" data-selected="false" data-topic="gen">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='difftumore_image'><img style="width:100%; height: auto;" src='images_new/difftumor.png'></div>
@@ -259,7 +270,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="visualprompt_stop()" onmouseover="visualprompt_start()">
+          <tr class="bottom-line publication" onmouseout="visualprompt_stop()" onmouseover="visualprompt_start()" data-topic="multimodal">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='visualprompt_image'><img style="width:100%; height: auto;" src='images_new/visualprompt.jpg'></div>
@@ -279,7 +290,7 @@
 
             <td class="pub-text-box">
               <a href="https://arxiv.org/abs/2212.10556">
-                <papertitle> Unleashing the Power of Visual Prompting At the Pixel Level </papertitle>
+                <papertitle> Unleashing the Power of Visual Prompting at the Pixel Level </papertitle>
               </a>
               <br>
               <a href="https://jywu511.github.io/", class="author">Junyang Wu*</a>,
@@ -300,7 +311,7 @@
           <!-- -------- -->    
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="layernorm_stop()" onmouseover="layernorm_start()">
+          <tr class="bottom-line publication" onmouseout="layernorm_stop()" onmouseover="layernorm_start()" data-topic="multimodal">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='layernorm_image'><img style="width:100%; height: auto;" src='images_new/layernorm.jpg'></div>
@@ -339,7 +350,7 @@
           <!-- -------- -->    
       
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="i2a_stop()" onmouseover="i2a_start()">
+          <tr class="bottom-line publication" onmouseout="i2a_stop()" onmouseover="i2a_start()" data-topic="gen,multimodal">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='i2a_image'><img style="width:100%;height:auto" src='images_new/i2a_2.png'></div>
@@ -380,7 +391,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="mllm_stop()" onmouseover="mllm_start()">
+          <tr class="bottom-line publication" onmouseout="mllm_stop()" onmouseover="mllm_start()" data-topic="multimodal">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='mllm_image'><img style="width:100%;height:auto" src='images_new/mllm.jpg'></div>
@@ -418,7 +429,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="diffmae_stop()" onmouseover="diffmae_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line publication" onmouseout="diffmae_stop()" onmouseover="diffmae_start()" bgcolor="#ffffd0" data-selected="true" data-topic="gen,ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='diffmae_image'><img style="width:100%; height:auto;" src='diffmae/interpolation/input.png'></div>
@@ -463,7 +474,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line">
+          <tr class="bottom-line publication" data-topic="multimodal,ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='smaug_image'><img style="width:100%; height:auto;" src='images_new/smaug.png'></div>
@@ -491,7 +502,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="hiera_stop()" onmouseover="hiera_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line publication" onmouseout="hiera_stop()" onmouseover="hiera_start()" bgcolor="#ffffd0" data-selected="true" data-topic="ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='hiera_image'><img style="width:100%;height: auto;" src='images_new/hiera_before.png'></div>
@@ -538,7 +549,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line">
+          <tr class="bottom-line publication" data-topic="ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='dmae_image'><img style="width:100%; height:auto;" src='images_new/dmae.png'></div>
@@ -570,7 +581,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="cp2_stop()" onmouseover="cp2_start()">
+          <tr class="bottom-line publication" onmouseout="cp2_stop()" onmouseover="cp2_start()" data-topic="ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='cp2_image'><img style="width:100%;height:auto;" src='images_new/cp2_after.png''></div>
@@ -609,7 +620,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line">
+          <tr class="bottom-line publication" data-topic="ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='li_image'><img style="width:100%;height:auto;" src='images_new/eccv2023li.png'></div>
@@ -640,7 +651,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="maskfeat_stop()" onmouseover="maskfeat_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line publication" onmouseout="maskfeat_stop()" onmouseover="maskfeat_start()" bgcolor="#ffffd0" data-selected="true" data-topic="ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='maskfeat_image'><img style="width:100%;height:auto;" src='images_new/maskfeat_after.png'></div>
@@ -682,7 +693,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="ibot_stop()" onmouseover="ibot_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line publication" onmouseout="ibot_stop()" onmouseover="ibot_start()" bgcolor="#ffffd0" data-selected="true" data-topic="ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='ibot_image'><img style="width:100%;height:auto;" src='images_new/ibot_after.png'></div>
@@ -727,7 +738,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="crest_stop()" onmouseover="crest_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line publication" onmouseout="crest_stop()" onmouseover="crest_start()" data-topic="ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='crest_image'><img style="width:100%;height:auto;" src='images_new/crest_after.png'></div>
@@ -768,7 +779,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="co2_stop()" onmouseover="co2_start()">
+          <tr class="bottom-line publication" onmouseout="co2_stop()" onmouseover="co2_start()" data-topic="ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='co2_image'><img style="width:100%;height:auto;" src='images_new/co2_after.png'></div>
@@ -807,7 +818,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="puzzle_stop()" onmouseover="puzzle_start()">
+          <tr class="bottom-line publication" onmouseout="puzzle_stop()" onmouseover="puzzle_start()" data-topic="ssl">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='puzzle_image'><img style="width:100%;height:auto;" src='images_new/puzzle_after.png'></div>
@@ -849,7 +860,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="retinex_stop()" onmouseover="retinex_start()">
+          <tr class="bottom-line publication" onmouseout="retinex_stop()" onmouseover="retinex_start()" data-topic="lowlight">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='retinex_image'><img style="width:100%;height:auto;" src='images_new/retinex_after.png'></div>
@@ -890,7 +901,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line" onmouseout="glad_stop()" onmouseover="glad_start()">
+          <tr class="bottom-line publication" onmouseout="glad_stop()" onmouseover="glad_start()" data-topic="lowlight">
             <td class="pub-image-box">
               <br></br>
               <div class="one">
@@ -928,6 +939,7 @@
             </td>
           </tr>
           <!-- -------- -->
+        </tbody>
         </table>
         <!-- -------- -->
         <!-- -------- -->
@@ -977,6 +989,57 @@
       </td>
     </tr>
   </table>
+
+  <script>
+    function clearActiveFilter() {
+        // Remove the 'active' class from all filters
+        const filters = document.querySelectorAll('.filters a');
+        filters.forEach(filter => filter.classList.remove('active'));
+    }
+
+    function applyFilter(element, filterFunction) {
+        clearActiveFilter(); // Clear previous active filters
+        element.classList.add('active'); // Mark the clicked filter as active
+        filterFunction(); // Execute the corresponding filter function
+    }
+
+    function showSelected() {
+      const rows = document.querySelectorAll('#publicationsTable tbody tr');
+      rows.forEach(row => {
+        if (row.dataset.selected === "true") {
+            row.classList.remove('hidden'); // Show selected rows
+        } else {
+            row.classList.add('hidden'); // Hide non-selected rows
+        }
+      });
+    }
+
+    function showByDate() {
+      const rows = document.querySelectorAll('#publicationsTable tbody tr');
+        rows.forEach(row => {
+          row.classList.remove('hidden'); // Hide non-selected rows
+        });
+    }
+
+    function filterByTopic(topic) {
+      const rows = document.querySelectorAll('#publicationsTable tbody tr');
+      rows.forEach(row => {
+          const topics = row.dataset.topic.split(',').map(t => t.trim()); // Split topics into an array
+            if (topics.includes(topic)) {
+                row.classList.remove('hidden'); // Show if the topic matches
+            } else {
+                row.classList.add('hidden'); // Hide otherwise
+            }
+        });
+    }
+
+    // Automatically highlight "show selected" on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const selectedFilter = document.getElementById('filter-selected');
+        applyFilter(selectedFilter, showSelected);
+    });
+  </script>
+
 </body>
 
 </html>

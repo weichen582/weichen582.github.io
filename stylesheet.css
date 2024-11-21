@@ -173,6 +173,26 @@ span.highlight {
   vertical-align: -.0667em;
 }
 
-.bottom-line {
-  border-bottom: 1px solid lightgray;
+.filters a {
+  text-decoration: none;
+  color: #1772d0;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.filters a.active {
+  text-decoration: underline; /* Highlight the active filter */
+}
+.filters a:hover {
+  text-decoration: underline;
+}
+tr.bottom-line {
+  border-top: 0.5px solid lightgray;
+  border-bottom: 0.5px solid lightgray;
+}
+tr {
+  display: table-row; /* Default: all rows visible */
+}
+tr.hidden {
+  display: none; /* Hide rows dynamically */
 }
