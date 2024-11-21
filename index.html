@@ -175,10 +175,10 @@
 
         <!-- -------- -->
         <!-- -------- -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:collapse;margin-right:auto;margin-left:auto;">
 
           <!-- -------- -->
-          <tr onmouseout="dediffusion_stop()" onmouseover="dediffusion_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line" onmouseout="dediffusion_stop()" onmouseover="dediffusion_start()" bgcolor="#ffffd0">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='dediffusion_image'><img style="width:100%; height: auto;" src='images_new/dediffusion_text.png'></div>
@@ -218,10 +218,10 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="difftumor_stop()" onmouseover="difftumor_start()">
+          <tr class="bottom-line" onmouseout="difftumor_stop()" onmouseover="difftumor_start()">
             <td class="pub-image-box">
               <div class="one">
-                <div class="two" id='dediffusion_image'><img style="width:100%; height: auto;" src='images_new/difftumor.png'></div>
+                <div class="two" id='difftumore_image'><img style="width:100%; height: auto;" src='images_new/difftumor.png'></div>
                 <img style="width:100%; height: auto;" src='images_new/difftumor.png'>
               </div>
               <script type="text/javascript">
@@ -259,7 +259,87 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="i2a_stop()" onmouseover="i2a_start()">
+          <tr class="bottom-line" onmouseout="visualprompt_stop()" onmouseover="visualprompt_start()">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='visualprompt_image'><img style="width:100%; height: auto;" src='images_new/visualprompt.jpg'></div>
+                <img style="width:100%; height: auto;" src='images_new/visualprompt.jpg'>
+              </div>
+              <script type="text/javascript">
+                function visualprompt_start() {
+                  document.visualprompt_start('visualprompt_image').style.opacity = "1";
+                }
+
+                function visualprompt_stop() {
+                  document.getElementById('visualprompt_image').style.opacity = "0";
+                }
+                visualprompt_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://arxiv.org/abs/2212.10556">
+                <papertitle> Unleashing the Power of Visual Prompting At the Pixel Level </papertitle>
+              </a>
+              <br>
+              <a href="https://jywu511.github.io/", class="author">Junyang Wu*</a>,
+              <a href="https://xhl-video.github.io/xianhangli/", class="author">Xianhang Li*</a>,
+              <b>Chen Wei</b>,
+              <a href="https://csrhddlam.github.io/", class="author">Huiyu Wang</a>,
+              <a href="http://www.cs.jhu.edu/~ayuille/", class="author">Alan Yuille</a>,
+              <a href="https://yuyinzhou.github.io/", class="author">Yuyin Zhou</a>,
+              <a href="https://cihangxie.github.io/", class="author">Cihang Xie</a>,
+              <br>
+              <em>TMLR</em>, 2024
+              <br>
+              <a href="https://arxiv.org/abs/2212.10556">arXiv</a>  /
+              <a href="https://github.com/UCSC-VLAA/EVP">code</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->    
+
+          <!-- -------- -->
+          <tr class="bottom-line" onmouseout="layernorm_stop()" onmouseover="layernorm_start()">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='layernorm_image'><img style="width:100%; height: auto;" src='images_new/layernorm.jpg'></div>
+                <img style="width:100%; height: auto;" src='images_new/layernorm.jpg'>
+              </div>
+              <script type="text/javascript">
+                function layernorm_start() {
+                  document.layernorm_start('layernorm_image').style.opacity = "1";
+                }
+
+                function layernorm_stop() {
+                  document.getElementById('layernorm_image').style.opacity = "0";
+                }
+                layernorm_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://arxiv.org/pdf/2312.11420">
+                <papertitle> Tuning LayerNorm in Attention: Towards Efficient MultiModal LLM Finetuning </papertitle>
+              </a>
+              <br>
+              <a href="https://bzhao.me/", class="author">Bingchen Zhao*</a>,
+              <a href="https://scholar.google.com/citations?user=hyFMd54AAAAJ&hl", class="author">Haoqin Tu*</a>,
+              <b>Chen Wei</b>,
+              <a href="https://meijieru.com/", class="author">Jieru Mei</a>,
+              <a href="https://cihangxie.github.io/", class="author">Cihang Xie</a>,
+              <br>
+              <em>ICLR</em>, 2024 <strong class="highlight">Spotlight</strong>
+              <br>
+              <a href="https://arxiv.org/pdf/2312.11420">arXiv</a>  /
+              <a href="https://huggingface.co/docs/peft/main/en/package_reference/layernorm_tuning">huggingface</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->    
+      
+          <!-- -------- -->
+          <tr class="bottom-line" onmouseout="i2a_stop()" onmouseover="i2a_start()">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='i2a_image'><img style="width:100%;height:auto" src='images_new/i2a_2.png'></div>
@@ -300,7 +380,45 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="diffmae_stop()" onmouseover="diffmae_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line" onmouseout="mllm_stop()" onmouseover="mllm_start()">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='mllm_image'><img style="width:100%;height:auto" src='images_new/mllm.jpg'></div>
+                <img style="width:100%;height:auto"src='images_new/mllm.jpg'>
+              </div>
+              <script type="text/javascript">
+                function mllm_start() {
+                  document.getElementById('mllm_image').style.opacity = "1";
+                }
+
+                function mllm_stop() {
+                  document.getElementById('mllm_image').style.opacity = "0";
+                }
+                mllm_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://arxiv.org/abs/2309.07120">
+                <papertitle> Sight Beyond Text: Multi-Modal Training Enhances LLMs in Truthfulness and Ethics </papertitle>
+              </a>
+              <br>
+              <a href="https://scholar.google.com/citations?user=hyFMd54AAAAJ&hl", class="author">Haoqin Tu*</a>,
+              <a href="https://bzhao.me/", class="author">Bingchen Zhao*</a>,
+              <b>Chen Wei</b>,
+              <a href="https://cihangxie.github.io/", class="author">Cihang Xie</a>,
+              <br>
+              <em>NeurIPS Instruction Workshop</em>, 2023
+              <br>
+              <a href="https://arxiv.org/abs/2309.07120">arXiv</a> / 
+              <a href="https://github.com/UCSC-VLAA/Sight-Beyond-Text">code</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->
+
+          <!-- -------- -->
+          <tr class="bottom-line" onmouseout="diffmae_stop()" onmouseover="diffmae_start()" bgcolor="#ffffd0">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='diffmae_image'><img style="width:100%; height:auto;" src='diffmae/interpolation/input.png'></div>
@@ -345,7 +463,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr>
+          <tr class="bottom-line">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='smaug_image'><img style="width:100%; height:auto;" src='images_new/smaug.png'></div>
@@ -373,7 +491,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="hiera_stop()" onmouseover="hiera_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line" onmouseout="hiera_stop()" onmouseover="hiera_start()" bgcolor="#ffffd0">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='hiera_image'><img style="width:100%;height: auto;" src='images_new/hiera_before.png'></div>
@@ -420,7 +538,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr>
+          <tr class="bottom-line">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='dmae_image'><img style="width:100%; height:auto;" src='images_new/dmae.png'></div>
@@ -452,7 +570,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="cp2_stop()" onmouseover="cp2_start()">
+          <tr class="bottom-line" onmouseout="cp2_stop()" onmouseover="cp2_start()">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='cp2_image'><img style="width:100%;height:auto;" src='images_new/cp2_after.png''></div>
@@ -491,7 +609,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr>
+          <tr class="bottom-line">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='li_image'><img style="width:100%;height:auto;" src='images_new/eccv2023li.png'></div>
@@ -522,7 +640,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="maskfeat_stop()" onmouseover="maskfeat_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line" onmouseout="maskfeat_stop()" onmouseover="maskfeat_start()" bgcolor="#ffffd0">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='maskfeat_image'><img style="width:100%;height:auto;" src='images_new/maskfeat_after.png'></div>
@@ -564,7 +682,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="ibot_stop()" onmouseover="ibot_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line" onmouseout="ibot_stop()" onmouseover="ibot_start()" bgcolor="#ffffd0">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='ibot_image'><img style="width:100%;height:auto;" src='images_new/ibot_after.png'></div>
@@ -609,7 +727,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="crest_stop()" onmouseover="crest_start()" bgcolor="#ffffd0">
+          <tr class="bottom-line" onmouseout="crest_stop()" onmouseover="crest_start()" bgcolor="#ffffd0">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='crest_image'><img style="width:100%;height:auto;" src='images_new/crest_after.png'></div>
@@ -650,7 +768,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="co2_stop()" onmouseover="co2_start()">
+          <tr class="bottom-line" onmouseout="co2_stop()" onmouseover="co2_start()">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='co2_image'><img style="width:100%;height:auto;" src='images_new/co2_after.png'></div>
@@ -689,7 +807,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="puzzle_stop()" onmouseover="puzzle_start()">
+          <tr class="bottom-line" onmouseout="puzzle_stop()" onmouseover="puzzle_start()">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='puzzle_image'><img style="width:100%;height:auto;" src='images_new/puzzle_after.png'></div>
@@ -731,7 +849,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="retinex_stop()" onmouseover="retinex_start()">
+          <tr class="bottom-line" onmouseout="retinex_stop()" onmouseover="retinex_start()">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='retinex_image'><img style="width:100%;height:auto;" src='images_new/retinex_after.png'></div>
@@ -772,7 +890,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr onmouseout="glad_stop()" onmouseover="glad_start()">
+          <tr class="bottom-line" onmouseout="glad_stop()" onmouseover="glad_start()">
             <td class="pub-image-box">
               <br></br>
               <div class="one">

@@ -173,3 +173,6 @@ span.highlight {
   vertical-align: -.0667em;
 }
 
+.bottom-line {
+  border-bottom: 1px solid lightgray;
+}
