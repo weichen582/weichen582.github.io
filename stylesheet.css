@@ -132,6 +132,7 @@ name {
 }
 
 .pub-text-box {
+  padding:30px;
   width:70%;
   vertical-align:middle
 }
