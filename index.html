@@ -58,8 +58,8 @@
     </p>
     <ul style="padding-left:20px; margin-top:10px; margin-bottom:0;">
       <li><strong>Visual Representation Learning:</strong> building foundational visual encoders (<a href="https://arxiv.org/abs/2111.07832">iBOT</a>, <a href="https://arxiv.org/abs/2112.09133">MaskFeat</a>, <a href="https://arxiv.org/abs/2504.13181">Perception Encoder</a>) that power downstream perception at scale.</li>
-      <li><strong>Generative World Models:</strong> using generative models not just to create, but to understand: learning representations from diffusion (<a href="https://weichen582.github.io/diffmae.html">DiffMAE</a>, <a href="https://dediffusion.github.io/">De-Diffusion</a>, <a href="https://arxiv.org/abs/2605.05206">DSR</a>) and generating explorable worlds (<a href="https://www.genex.world/">GenEx</a>).</li>
-      <li><strong>Agentic Vision:</strong> enabling models to reason and act through vision, from game-based reasoning (<a href="https://yunfeixie233.github.io/ViGaL/">Play to Generalize</a>) to tool-augmented visual agents (<a href="https://agent-x.space/pyvision-rl/">PyVision-RL</a>).</li>
+      <li><strong>Generative World Models:</strong> using generative models not just to create, but to understand: learning representations from diffusion (<a href="https://arxiv.org/abs/2304.03283">DiffMAE</a>, <a href="https://arxiv.org/abs/2311.00618">De-Diffusion</a>, <a href="https://arxiv.org/abs/2605.05206">DSR</a>) and generating explorable worlds (<a href="https://arxiv.org/abs/2412.09624">GenEx</a>).</li>
+      <li><strong>Agentic Vision:</strong> enabling models to reason and act through vision, from game-based reasoning (<a href="https://arxiv.org/abs/2506.08011">Play to Generalize</a>) to tool-augmented visual agents (<a href="https://arxiv.org/abs/2507.07998">PyVision</a>, <a href="https://arxiv.org/abs/2602.20739">PyVision-RL</a>).</li>
     </ul>
   </div>
 
@@ -75,6 +75,28 @@
       <li><span class="news-date">2025</span> <a href="https://arxiv.org/abs/2504.13181">Perception Encoder</a> accepted to NeurIPS 2025 as <strong>Oral</strong> presentation.</li>
       <li><span class="news-date">2025</span> Congratulations to <a href="https://yunfeixie233.github.io/">Yunfei Xie</a> for receiving the <a href="https://lambda.ai/research">Lambda Research Grant</a> ($10,000) for his work on <a href="https://arxiv.org/abs/2506.08011">Play to Generalize</a>.</li>
     </ul>
+  </div>
+
+  <!-- ===== Blog ===== -->
+  <div class="section blog-section">
+    <div class="section-header"><h2>Blog</h2></div>
+    <div class="blog-list">
+      <article class="blog-post">
+        <a class="blog-thumb" href="https://a-little-hoof.github.io/blog/2026/05/ema-in-diffusion-training/" aria-label="Read EMA: A Quiet Hyperparameter That Moves Diffusion Leaderboards">
+          <img src="images_new/ema_diffusion_blog.png" alt="Abstract blue diffusion swirl">
+        </a>
+        <div class="blog-content">
+          <div class="blog-meta">with <a href="https://a-little-hoof.github.io/">Yifei Wang</a> and <a href="https://nicholas0228.github.io/">Xiaoyu Wu</a> · June 2026 · generative model evaluation</div>
+          <h3 class="blog-title">
+            <a href="https://a-little-hoof.github.io/blog/2026/05/ema-in-diffusion-training/">EMA: A Quiet Hyperparameter That Moves Diffusion Leaderboards</a>
+          </h3>
+          <p class="blog-summary">
+            We examine exponential moving average (EMA), an often overlooked hyperparameter, in recent speed-run image diffusion benchmarks.
+            A seemingly small experimental detail can change how benchmark results and model rankings should be interpreted.
+          </p>
+        </div>
+      </article>
+    </div>
   </div>
 
   <!-- ===== Publications ===== -->
@@ -107,7 +129,8 @@
           <em>arXiv preprint</em>, 2026
           <br>
           <a href="https://arxiv.org/abs/2605.05206">arXiv</a> /
-          <a href="https://a-little-hoof.github.io/dit-register/">project page</a>
+          <a href="https://a-little-hoof.github.io/dit-register/">project page</a> /
+          <a href="https://github.com/a-little-hoof/DSR">code</a>
         </div>
       </div>
 
@@ -294,17 +317,12 @@
       </div>
 
       <!-- De-Diffusion -->
-      <div class="pub-row publication" onmouseout="dediffusion_stop()" onmouseover="dediffusion_start()">
+      <div class="pub-row publication">
         <div class="pub-image-box">
           <div class="one">
             <div class="two" id="dediffusion_image"><img style="width:100%;height:auto;" src="images_new/dediffusion_text.png"></div>
             <img style="width:100%;height:auto;" src="images_new/corgi.jpeg">
           </div>
-          <script type="text/javascript">
-            function dediffusion_start() { document.getElementById('dediffusion_image').style.opacity = "1"; }
-            function dediffusion_stop() { document.getElementById('dediffusion_image').style.opacity = "0"; }
-            dediffusion_stop()
-          </script>
         </div>
         <div class="pub-text-box">
           <a href="https://arxiv.org/abs/2311.00618">
@@ -326,17 +344,12 @@
       </div>
 
       <!-- DiffMAE -->
-      <div class="pub-row publication" onmouseout="diffmae_stop()" onmouseover="diffmae_start()">
+      <div class="pub-row publication">
         <div class="pub-image-box">
           <div class="one">
             <div class="two" id="diffmae_image"><img style="width:100%;height:auto;" src="diffmae/interpolation/input.png"></div>
             <img style="width:100%;height:auto;" src="diffmae/interpolation/2.png">
           </div>
-          <script type="text/javascript">
-            function diffmae_start() { document.getElementById('diffmae_image').style.opacity = "1"; }
-            function diffmae_stop() { document.getElementById('diffmae_image').style.opacity = "0"; }
-            diffmae_stop()
-          </script>
         </div>
         <div class="pub-text-box">
           <a href="https://arxiv.org/abs/2304.03283">
@@ -363,17 +376,12 @@
       </div>
 
       <!-- MaskFeat -->
-      <div class="pub-row publication" onmouseout="maskfeat_stop()" onmouseover="maskfeat_start()">
+      <div class="pub-row publication">
         <div class="pub-image-box">
           <div class="one">
             <div class="two" id="maskfeat_image"><img style="width:100%;height:auto;" src="images_new/maskfeat_after.png"></div>
             <img style="width:100%;height:auto;" src="images_new/maskfeat_before.png">
           </div>
-          <script type="text/javascript">
-            function maskfeat_start() { document.getElementById('maskfeat_image').style.opacity = "1"; }
-            function maskfeat_stop() { document.getElementById('maskfeat_image').style.opacity = "0"; }
-            maskfeat_stop()
-          </script>
         </div>
         <div class="pub-text-box">
           <a href="https://arxiv.org/pdf/2112.09133.pdf">
@@ -396,17 +404,12 @@
       </div>
 
       <!-- iBOT -->
-      <div class="pub-row publication" onmouseout="ibot_stop()" onmouseover="ibot_start()">
+      <div class="pub-row publication">
         <div class="pub-image-box">
           <div class="one">
             <div class="two" id="ibot_image"><img style="width:100%;height:auto;" src="images_new/ibot_after.png"></div>
             <img style="width:100%;height:auto;" src="images_new/ibot_before.png">
           </div>
-          <script type="text/javascript">
-            function ibot_start() { document.getElementById('ibot_image').style.opacity = "1"; }
-            function ibot_stop() { document.getElementById('ibot_image').style.opacity = "0"; }
-            ibot_stop()
-          </script>
         </div>
         <div class="pub-text-box">
           <a href="https://arxiv.org/pdf/2111.07832.pdf">
