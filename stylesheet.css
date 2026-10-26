@@ -5,14 +5,14 @@
 
 /* --- CSS Variables --- */
 :root {
-  --bg: #fdfdfc;
-  --text: #111418;
+  --bg: #ffffff;
+  --text: #19232e;
   --text-muted: #6b7280;
-  --text-soft: #4b5563;
-  --accent: #1d4ed8;
+  --text-soft: #4f5c69;
+  --accent: #285b91;
   --accent-soft: #3b82f6;
-  --border: #ececec;
-  --border-soft: #f1f1f1;
+  --border: #e5eaf0;
+  --border-soft: #edf0f3;
   --hover-bg: #fafaf9;
   --highlight-bg: #eff6ff;
 }
@@ -40,7 +40,7 @@ body {
 a {
   color: var(--accent);
   text-decoration: none;
-  text-decoration-color: rgba(29, 78, 216, 0.25);
+  text-decoration-color: rgba(40, 91, 145, 0.25);
   text-underline-offset: 2px;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
@@ -54,7 +54,7 @@ a:hover {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 56px 28px 48px;
+  padding: 64px 28px 48px;
 }
 
 /* =========================================================
@@ -63,8 +63,8 @@ a:hover {
 .hero {
   display: flex;
   align-items: flex-start;
-  gap: 56px;
-  padding-bottom: 48px;
+  gap: 48px;
+  padding-bottom: 20px;
   margin-bottom: 0;
 }
 
@@ -103,39 +103,49 @@ a:hover {
 
 /* --- Name --- */
 h1 {
-  font-size: 2.15rem;
+  font-size: 2.35rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 1.15;
 }
 
-/* --- Social links row --- */
-.social-links {
+/* --- Contact and profile links --- */
+.contact-links {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 22px;
-  font-size: 14px;
+  column-gap: 24px;
+  row-gap: 6px;
+  margin-top: 18px;
 }
 
-.social-links a {
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 3px 0;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: color 0.15s ease;
+}
+
+.contact-links svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
   color: var(--text-muted);
-  padding: 0 2px;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.15s ease;
 }
 
-.social-links a:hover {
+.contact-links a:hover,
+.contact-links a:hover svg {
   color: var(--accent);
   text-decoration: none;
-  transform: translateY(-1px);
-}
-
-.social-links .sep {
-  color: var(--border);
-  padding: 0 4px;
 }
 
 .icon {
@@ -160,9 +170,9 @@ h1 {
 }
 
 .section-header {
-  padding-bottom: 14px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -185,9 +195,9 @@ h1 {
 }
 
 h2 {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-soft);
   margin: 0;
@@ -206,7 +216,7 @@ h3 {
 }
 
 .section ul li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .section ul li:last-child {
@@ -268,9 +278,10 @@ h3 {
 }
 
 .blog-meta {
-  margin-bottom: 6px;
-  color: var(--text-soft);
-  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
   font-weight: 400;
   letter-spacing: 0;
 }
@@ -627,6 +638,75 @@ strong.highlight {
   vertical-align: 1px;
 }
 
+/* --- Affiliation and recruiting notice --- */
+.hero-text .hero-affiliation {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.hero-affiliation a {
+  font-weight: 500;
+}
+
+.recruiting-note {
+  padding: 10px 14px;
+  border-left: 2px solid #9db7d2;
+  border-radius: 0 5px 5px 0;
+  background: #f5f8fb;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.hero-text .recruiting-note {
+  margin: 20px 0 0;
+}
+
+.recruiting-note strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* --- Prospective student pages --- */
+.students-content {
+  width: calc(100% - 56px);
+  max-width: 860px;
+  margin: 40px auto 0;
+  padding-bottom: 64px;
+  border: 0;
+  border-spacing: 0;
+  border-collapse: separate;
+  color: var(--text-soft);
+}
+
+.students-content h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.students-content h2 {
+  font-size: 0.8rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.students-content li {
+  margin-bottom: 8px;
+}
+
+.students-content .recruiting-note {
+  margin-top: 16px;
+}
+
 /* =========================================================
    Responsive
    ========================================================= */
@@ -655,7 +735,7 @@ strong.highlight {
     align-items: center;
     text-align: center;
     gap: 24px;
-    padding-bottom: 36px;
+    padding-bottom: 12px;
   }
 
   .hero-photo img {
@@ -665,11 +745,30 @@ strong.highlight {
   }
 
   h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text .hero-affiliation {
+    font-size: 0.95rem;
+  }
+
+  .recruiting-note {
+    text-align: left;
+  }
+
+  .students-content {
+    width: calc(100% - 36px);
+    margin-top: 16px;
+    padding-bottom: 40px;
+  }
+
+  .students-content h1 {
     font-size: 1.7rem;
   }
 
-  .social-links {
+  .contact-links {
     justify-content: center;
+    column-gap: 20px;
   }
 
   .pub-row {
